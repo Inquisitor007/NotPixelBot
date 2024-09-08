@@ -172,7 +172,6 @@ class Tapper:
                     color = pixel["pixel"]["color"]
                     if color == pixel_color:
                         continue
-                    logger.info(color)
                     await asyncio.sleep(delay=1)
                     response = await self.paint_pixel(http_client=http_client, pixel_id=pixel_id, pixel_color=pixel_color)
                     await asyncio.sleep(delay=1)
