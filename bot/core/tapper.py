@@ -168,11 +168,6 @@ class Tapper:
                 while True:
                     pixel_id = random.randint(0, 1000000)
                     pixel_color = "#3690EA" if pixel_id > 500000 else "#FFD635"
-                    pixel = await self.get_pixel(http_client=http_client, pixel_id=pixel_id)
-                    color = pixel["pixel"]["color"]
-                    if color == pixel_color:
-                        continue
-                    await asyncio.sleep(delay=1)
                     response = await self.paint_pixel(http_client=http_client, pixel_id=pixel_id, pixel_color=pixel_color)
                     await asyncio.sleep(delay=1)
                     if response is None:
